@@ -1,0 +1,126 @@
+Expert: 
+A faculty of medicine ain shams university fourth year student
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Domain:
+The project is about different types of Anemia. It makes the patients choose between some symptons or caueses
+of the disease and predicts whether they have anemia, mild anemia (occurs if the patient doesn't have all the 
+symptoms) or don't have anemia at all.
+The data contains 5 different types of anemia which are: 
+	1. Main anemia which patient has fatigue and pallor.
+	2. Iron Deficiency Anemia which patient has a desire for non edible material, lack of concentration,
+	dry skin, thin hair and poor weight gain and consuming iron rich food less than 4 times per month.
+	3. Folic Acid Deficiency Anemia which patient has diarrhea, tongue redness or hotness or pain, tingling
+	sensations in hands or legs and consumng goats' milk frequently.
+	4. Thalassemia Anemia which patient has enlarged liver or spleen or both, yellowish discoloration of skin,
+	leg ulcers, requiring frequent blood transfusion and having family members diagnosed with thalassemia.
+	5. Fanconi anemia which patient has a history of frequent repeated infections within a short period of 
+	time, any form of bleeding following a minor incident, thumb anomalies since birth, drooping eyelids 
+	and hearing loss and/or any ear anomalies.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Questions:
+
+Main Anemia: 
+
+1- Are you suffering from fatigue?
+Y -> Anemia
+N -> Not-Anemia
+
+2- Do you have pallor?
+Y -> Anemia
+N -> Not-Anemia
+
+-----------------------------------------------Iron Deficiency Anemia------------------------------------------------------------------------------
+
+1- Do you have desire for non edible material?
+Y -> Iron deficiency Anemia
+N -> Not-  defic. Anemia  
+
+2- Do you suffer from lack of concentration?
+Y->Iron defic. Anemia
+N-> Not-defic. Anemia
+
+3- Do you have dry skin?
+Y->Iron defic. Anemia
+N-> Not-defic. Anemia
+
+4- Do you have thin hair?
+Y->Iron defic. Anemia
+N-> Not-defic. Anemia
+
+5- Do you suffer from poor weight gain?
+Y->Iron defic. Anemia
+N-> Not-defic. Anemia
+
+6- Do you consume iron rich food (liver) less than 4 times per month?	(To be more accurate that he has defic. Anemia in case he didn't say yes to all questions)  
+Y-> Iron defic. Anemia
+N-> Not-defic. Anemia
+
+
+-------------------------------Folic Acid Deficiency Anemia-------------------------------------------------------
+
+Do you have diarrhea?
+Yes.... folic acid deficiency anemia
+No... Not
+
+
+Do you have tongue redness or hotness or pain? 
+Yes...folic acid deficiency anemia
+No... Not
+
+
+Do you experience tingling sensations in your hands or legs? 
+Yes.... Folic acid deficiency anemia
+No... Not
+
+
+Do you consume goats' milk frequently ?
+Yes.... Folic acid deficiency anemia
+No... Not
+
+
+------------------------------Thalassemia Anemia-------------------------------------------------------------------------
+
+Do you have an enlarged liver or spleen or both?
+Yes... Thalassemia 
+No.. Not 
+
+Do you have yellowish discoloration of your skin?
+Yes... Thalassemia 
+No.. Not 
+
+Do you have leg ulcers? 
+Yes... Thalassemia 
+No.. Not 
+
+Do you require frequent blood transfusion?
+Yes... Thalassemia 
+No.. Not 
+
+Was any of your family members diagnosed with thalassemia?
+Yes... Thalassemia 
+No.. Not
+
+---------------------------------Fanconi anemia---------------------------------------------------------------------------------------------------------------
+
+
+Do you have a history of frequent repeated infections within a short period of time ?
+Yes.. Fanconi anemia 
+No... Not
+
+Did you recently suffer from any form of bleeding following a minor incident?
+Yes.. Fanconi anemia 
+No... Not
+
+Do you have thumb anomalies since birth?
+Yes.. Fanconi anemia 
+No... Not
+
+Do you have drooping eyelids?
+Yes.. Fanconi anemia 
+No... Not
+
+Do you suffer from hearing loss and/or any ear anomalies?
+Yes.. Fanconi anemia 
+No... Not
