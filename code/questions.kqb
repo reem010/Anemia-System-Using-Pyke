@@ -1,0 +1,75 @@
+# questions.kqb
+
+	# Iron Anemia Questions --------------------------------------------------
+Iron_Deficiency($ans)
+    1-Do you have any of the following symptoms?
+    ---
+    $ans = select_1
+        1:Desire for non edible material
+        2:Suffer from lack of concentration
+        3:Have dry skin
+        4:Thin hair
+        5:Suffer from poor weight gain
+        6:All of the above
+        7:None of the above
+
+is_fatigue($ans)
+    Are you suffering from fatigue?
+    
+    ---
+    $ans = yn
+
+is_pallor($ans)
+    Do you have pallor?
+    
+    ---
+    $ans = yn
+    
+    
+is_ironfood($ans)
+    Do you consume iron rich food (liver) less than 4 times per month?
+    
+    ---
+    $ans = yn
+#-----------------------------------------Folic anemia questions----------------
+
+Folic_Deficiency($ans)
+    2-Do you have any of the following symptoms?
+    ---
+    $ans = select_1
+        1:Do you have diarrhea?
+        2:Do you have tongue redness or hotness or pain? 
+        3:Do you experience tingling sensations in your hands or legs?
+        4:Do you consume goats' milk frequently ?
+        5:All of the above
+        6:None of the above
+
+#------------------------------------------------------------------------------
+
+#----------------Thalassemia Anemia--------------------------------------------
+
+Thalassemia_Deficiency($ans)
+    3-Do you have any of the following symptoms?
+    ---
+    $ans = select_1
+        1:Do you have an enlarged liver or spleen or both?
+        2:Do you have yellowish discoloration of your skin? 
+        3:Do you have leg ulcers?
+        4:Do you require frequent blood transfusion?
+        5:Was any of your family members diagnosed with thalassemia?
+        6:All of the above
+        7:None of the above
+    
+#------------------------------------------------------------------------------
+
+Fanconi_Anemia($ans)
+    4-Do you have any of the following symptoms?
+    ---
+    $ans = select_1
+    1:Do you have a history of frequent repeated infections within a short period of time ?
+    2:Did you recently suffer from any form of bleeding following a minor incident? 
+    3:Do you have thumb anomalies since birth?
+    4:Do you have drooping eyelids?
+    5:Do you suffer from hearing loss and/or any ear anomalies?
+    6:All of the above
+    7:None of the above

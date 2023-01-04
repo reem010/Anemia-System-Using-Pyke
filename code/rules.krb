@@ -1,0 +1,503 @@
+# bc_simple_rules.krb
+
+# Main Symptoms ------------------------------------------
+no_anemia
+    use what_to_bring(You_Have_No_Anemia)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(False)
+        
+mild1_anemia
+    use what_to_bring(You_Have_Mild_Anemia)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        
+mild2_anemia
+    use what_to_bring(You_Have_Mild_Anemia)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)    
+        
+full_anemia
+    use what_to_bring(You_Have_Anemia)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)      
+
+ 
+ #--------------------------------------------Iron Deficiency Anemia-----------
+     # mild (rest of symptoms)
+iron1_anemia
+    use what_to_bring(You_Have_Mild_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (1,2,3,4,5)
+        
+
+iron2_anemia
+    use what_to_bring(You_Have_Mild_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($ans)
+        check $ans in (1,2,3,4,5)      
+          
+iron3_anemia
+    use what_to_bring(You_Have_Mild_Iron_Deficiency)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (1,2,3,4,5)        
+        
+        
+  # All of the above      
+iron4_anemia
+    use what_to_bring(You_Have_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (6,)      
+        
+        
+iron5_anemia
+    use what_to_bring(You_Have_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($ans)
+        check $ans in (6,)        
+        
+iron6_anemia
+    use what_to_bring(You_Have_Iron_Deficiency)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (6,)        
+        
+
+# Liver Question 
+iron7_anemia
+    use what_to_bring(You_Have_Mild_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(True)
+        
+iron8_anemia
+    use what_to_bring(You_Have_Mild_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(True)
+        
+iron9_anemia
+    use what_to_bring(You_Have_Mild_Iron_Deficiency)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(True)
+        
+iron10_anemia
+    use what_to_bring(You_Have_No_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)    
+
+
+iron11_anemia
+    use what_to_bring(You_Have_No_Iron_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)  
+
+
+
+iron12_anemia
+    use what_to_bring(You_Have_No_Iron_Deficiency)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)  
+
+#------------------------------------------------------------------------------        
+
+folic1_anemia
+    use what_to_bring(You_Have_Mild_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (1,2,3,4)
+        
+folic2_anemia
+    use what_to_bring(You_Have_Mild_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (1,2,3,4)
+
+folic3_anemia
+    use what_to_bring(You_Have_Mild_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (1,2,3,4)
+
+
+folic4_anemia
+    use what_to_bring(You_Have_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (5,)
+        
+
+folic5_anemia
+    use what_to_bring(You_Have_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (5,)
+
+folic6_anemia
+    use what_to_bring(You_Have_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (5,)
+
+folic7_anemia
+    use what_to_bring(You_Have_No_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (6,)
+
+
+folic8_anemia
+    use what_to_bring(You_Have_No_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (6,)
+
+folic9_anemia
+    use what_to_bring(You_Have_No_Folic_Acid_Deficiency)
+    when
+        questions.is_fatigue(False)
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($ans)
+        check $ans in (7,)
+        questions.is_ironfood(False)
+        questions.Folic_Deficiency($test)
+        check $test in (6,)
+
+#------------------------------------------------------------------------------
+
+Thalassemia1_anemia
+    use what_to_bring(You_Have_Mild_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)  
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (1,2,3,4,5)
+    
+Thalassemia2_anemia
+    use what_to_bring(You_Have_Mild_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)  
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (1,2,3,4,5)   
+        
+Thalassemia3_anemia
+    use what_to_bring(You_Have_Mild_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(False)  
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (1,2,3,4,5)  
+
+Thalassemia4_anemia
+    use what_to_bring(You_Have_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)  
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (6,) 
+        
+Thalassemia5_anemia
+    use what_to_bring(You_Have_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)  
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (6,) 
+        
+
+Thalassemia6_anemia
+    use what_to_bring(You_Have_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(False)  
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (6,)         
+        
+Thalassemia7_anemia
+    use what_to_bring(You_Have_No_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)  
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (7,)
+        
+Thalassemia8_anemia
+    use what_to_bring(You_Have_No_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(True)  
+        questions.is_pallor(False)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (7,)
+        
+Thalassemia9_anemia
+    use what_to_bring(You_Have_No_Thalassemia_Acid_Deficiency)
+    when
+        questions.is_fatigue(False)  
+        questions.is_pallor(True)
+        questions.Iron_Deficiency($iron)
+        check $iron in (7,)
+        questions.is_ironfood(False) 
+        questions.Folic_Deficiency($folic)
+        check $folic in (6,)
+        questions.Thalassemia_Deficiency($test)
+        check $test in (7,)
+        
+# ----------------------------------------------------------------------------
+
+Fanconi1_anemia
+        use what_to_bring(You_Have_Mild_Fanconi_Anemia)
+        when
+            questions.is_fatigue(True)  
+            questions.is_pallor(True)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (1,2,3,4,5)
+            
+Fanconi2_anemia
+        use what_to_bring(You_Have_Mild_Fanconi_Anemia)
+        when
+            questions.is_fatigue(True)  
+            questions.is_pallor(False)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (1,2,3,4,5)
+            
+Fanconi3_anemia
+        use what_to_bring(You_Have_Mild_Fanconi_Anemia)
+        when
+            questions.is_fatigue(False)  
+            questions.is_pallor(True)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (1,2,3,4,5)
+
+Fanconi4_anemia
+        use what_to_bring(You_Have_Fanconi_Anemia)
+        when
+            questions.is_fatigue(True)  
+            questions.is_pallor(True)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (6,)
+
+Fanconi5_anemia
+        use what_to_bring(You_Have_Fanconi_Anemia)
+        when
+            questions.is_fatigue(True)  
+            questions.is_pallor(False)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (6,)
+            
+Fanconi6_anemia
+        use what_to_bring(You_Have_Fanconi_Anemia)
+        when
+            questions.is_fatigue(False)  
+            questions.is_pallor(True)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (6,)
+            
+Fanconi7_anemia
+        use what_to_bring(You_Have_No_Fanconi_Anemia)
+        when
+            questions.is_fatigue(True)  
+            questions.is_pallor(True)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (7,)
+            
+            
+Fanconi8_anemia
+        use what_to_bring(You_Have_No_Fanconi_Anemia)
+        when
+            questions.is_fatigue(True)  
+            questions.is_pallor(False)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (7,)
+            
+                        
+Fanconi9_anemia
+        use what_to_bring(You_Have_No_Fanconi_Anemia)
+        when
+            questions.is_fatigue(False)  
+            questions.is_pallor(True)
+            questions.Iron_Deficiency($iron)
+            check $iron in (7,)
+            questions.is_ironfood(False) 
+            questions.Folic_Deficiency($folic)
+            check $folic in (6,)
+            questions.Thalassemia_Deficiency($thalassemia)
+            check $thalassemia in (7,)
+            questions.Fanconi_Anemia($fanconi)
+            check $fanconi in (7,)
